@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MysticPartyTracker.View.DiceView"
+             Title="DiceView">
+    <VerticalStackLayout
+       Padding="30,0"
+       Spacing="25">
+
+    <Label
+       Text=""
+       x:Name="ResultLabel" 
+       Style="{StaticResource Headline}"
+       SemanticProperties.HeadingLevel="Level1"
+       FontAttributes="Bold"
+       TextColor="Black"/>
+
+    <Picker  x:Name="Dados"
+       Title="Quantidade de dados">
+         <Picker.ItemsSource>
+             <x:Array Type="{x:Type x:String}">
+             <x:String>1</x:String>
+             <x:String>2</x:String>
+             <x:String>4</x:String>
+             <x:String>8</x:String>
+             <x:String>16</x:String>
+             <x:String>32</x:String>
+             <x:String>64</x:String>
+             <x:String>128</x:String>
+             </x:Array>
+        </Picker.ItemsSource>
+    </Picker>
+
+        <Picker  x:Name="Lados"
+                 Title="Quantidade de lados">
+            <Picker.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>4</x:String>
+                <x:String>6</x:String>
+                <x:String>10</x:String>
+                <x:String>20</x:String>
+                <x:String>100</x:String>
+            </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
+        <Button       
+    x:Name="RollBtn"
+    Text="ROLAR O DADO"
+    BackgroundColor="#303030"
+    Clicked="RollBtn_Clicked"
+    WidthRequest="200"/>
+        
+    </VerticalStackLayout>
+</ContentPage>
